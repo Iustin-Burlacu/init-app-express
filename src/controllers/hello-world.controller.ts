@@ -1,4 +1,4 @@
-import {Controller, Get, Route, Security} from "tsoa";
+import {Controller, Get, Path, Route, Security} from "tsoa";
 import {HelloWorldService} from "../services/hello-world.service";
 import {HelloWorld} from "../interfaces/HelloWorld";
 
@@ -14,5 +14,11 @@ export class HelloWorldController extends Controller {
     public async getAllUser(
     ): Promise<HelloWorld> {
         return this.helloWorldService.get();
+    }
+
+    @Get("/:id")
+    @Security('BearerAuth')
+    public async getUserById(id: string): Promise<string> {
+        return id;
     }
 }

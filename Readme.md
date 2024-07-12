@@ -40,7 +40,7 @@ https://yarnpkg.com/
 
 # Create file `.env` (environment configuration variable)
 
-    SERVER_PORT=500
+    SERVER_PORT=5001
 
 # Files organization
 
